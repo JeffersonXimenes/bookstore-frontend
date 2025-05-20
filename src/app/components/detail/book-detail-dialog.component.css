@@ -1,0 +1,15 @@
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.details-table th {
+  text-align: left;
+  padding-right: 8px;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.details-table td {
+  padding-bottom: 8px;
+}

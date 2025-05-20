@@ -1,0 +1,13 @@
+table {
+  width: 100%;
+  cursor: pointer;
+}
+
+mat-card {
+  margin: 20px;
+  padding: 20px;
+}
+
+.mt-4 {
+  margin-top: 20px;
+}

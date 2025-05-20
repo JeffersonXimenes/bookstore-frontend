@@ -1,0 +1,65 @@
+<div class="login-container">
+  <mat-card>
+    <h2 class="form-title">Login</h2>
+    <form [formGroup]="loginForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" formControlName="password" />
+      </mat-form-field>
+
+      <div class="action-buttons">
+        <button mat-raised-button color="accent" (click)="openRegisterModal()">Registrar-se</button>
+        <button mat-raised-button color="primary" (click)="onLogin()">Entrar</button>
+      </div>
+    </form>
+    <app-error-modal
+      [title]="'Erro'"
+      [messages]="errorMessages"
+      [visible]="showErrorModal">
+    </app-error-modal>
+  </mat-card>
+
+  <ng-template #registerDialog>
+    <h2 class="form-title">Registrar</h2>
+
+    <mat-dialog-content [formGroup]="registerForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" formControlName="password" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Confirmar Senha</mat-label>
+        <input matInput type="password" formControlName="confirmPassword" />
+      </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-button (click)="onRegister()">Cadastrar</button>
+    </mat-dialog-actions>
+    <app-success-modal
+      [title]="'Sucesso!'"
+      [message]="successMessage"
+      [visible]="showSuccessModal">
+    </app-success-modal>
+    <app-error-modal
+      [title]="'Erro'"
+      [messages]="errorMessages"
+      [visible]="showErrorModal">
+    </app-error-modal>
+  </ng-template>
+</div>

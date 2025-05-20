@@ -1,0 +1,9 @@
+<div class="modal-backdrop" *ngIf="visible">
+  <div class="modal">
+    <h2 class="modal-title">{{ title }}</h2>
+    <ul>
+      <li *ngFor="let message of messages">{{ message }}</li>
+    </ul>
+    <button (click)="closeModal()">Fechar</button>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<h2 class="form-title">Detalhes do Livro</h2>
+
+<mat-dialog-content>
+  <table class="details-table">
+    <tr>
+      <th>Título:</th>
+      <td>{{ book.title }}</td>
+    </tr>
+    <tr>
+      <th>Autor:</th>
+      <td>{{ book.author }}</td>
+    </tr>
+    <tr>
+      <th>Preço:</th>
+      <td>R$ {{ book.price | number: '1.2-2' }}</td>
+    </tr>
+    <tr>
+      <th>Tipos:</th>
+      <td>{{ stringifyDescriptions(book.types) }}</td>
+    </tr>
+    <tr>
+      <th>Gêneros principais:</th>
+      <td>{{ stringifyDescriptions(book.mainGenres) }}</td>
+    </tr>
+    <tr>
+      <th>Subgêneros:</th>
+      <td>{{ stringifyDescriptions(book.subGenres) }}</td>
+    </tr>
+  </table>
+
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-raised-button color="accent" (click)="close()">Fechar</button>
+</mat-dialog-actions>
+
